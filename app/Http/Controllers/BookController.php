@@ -7,8 +7,15 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return Book::get();
+        return Book::filter($request, $this->getFilters())->get();
+    }
+    
+    protected function getFilters()
+    {
+        return [
+            
+        ];
     }
 }
