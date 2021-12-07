@@ -20,6 +20,7 @@ class BookFactory extends Factory
             'free' => rand(0, 1),
             'difficulty' => ['beginner', 'intermediate', 'advanced'][rand(0, 2)],
             'type' => ['theory', 'project', 'snippet'][rand(0, 2)],
+            'views' => $this->faker->numberBetween(1, 20),
         ];
     }
 }

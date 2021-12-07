@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->boolean('free')->default(false);
             $table->enum('difficulty', ['beginner', 'intermediate', 'advanced'])->default('beginner');
             $table->enum('type', ['theory', 'project', 'snippet'])->default('theory');
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

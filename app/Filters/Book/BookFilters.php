@@ -11,7 +11,7 @@ use App\Filters\Book\{
     StartedFilter,
     SubjectFilter,
     TypeFilter,
-    Ordering\ViewsOrder
+    ViewsOrder
 };
 
 /**
@@ -27,6 +27,8 @@ class BookFilters extends Filters
         'difficulty' => DifficultyFilter::class,
         'type' => TypeFilter::class,
         'subject' => SubjectFilter::class,
+        'started' => StartedFilter::class,
+        'views' => ViewsOrder::class,
     ];
     
     
