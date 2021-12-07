@@ -16,4 +16,9 @@ class Book extends Model
     {
         return (new BookFilters($request))->add($filters)->filter($builder);
     }
+    
+    public function subjects()
+    {
+        return $this->morphToMany(Subject::class, 'subjectable');
+    }
 }

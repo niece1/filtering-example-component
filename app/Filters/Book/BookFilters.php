@@ -26,6 +26,7 @@ class BookFilters extends Filters
         'access' => AccessFilter::class,
         'difficulty' => DifficultyFilter::class,
         'type' => TypeFilter::class,
+        'subject' => SubjectFilter::class,
     ];
     
     

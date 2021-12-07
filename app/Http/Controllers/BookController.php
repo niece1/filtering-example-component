@@ -9,7 +9,7 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
-        return Book::filter($request, $this->getFilters())->get();
+        return Book::with(['subjects'])->filter($request, $this->getFilters())->get();
     }
     
     protected function getFilters()
