@@ -7,17 +7,16 @@
     
     @foreach ($mappings as $key => $map)
     <div class="item">
-    @foreach($map as $value => $name)
-    <p class="{{ request($key) === $value ? ' active' : '' }}">
-        <!-- Merging current query with the key and value of the filter --> 
-        <a
-            href="{{ route('books.index', array_merge(request()->query(), [$key => $value])) }}">
-            {{ $name }}
-        </a>
-    </p>
-    @endforeach
+        
+        @foreach($map as $value => $name)
+        <p class="{{ request($key) === $value ? ' active' : '' }}">
+            <!-- Merging current query with the key and value of the filter --> 
+            <a href="{{ route('books.index', array_merge(request()->query(), [$key => $value])) }}">
+                {{ $name }}
+            </a>
+        </p>
+        @endforeach
     </div>
     @endforeach
-        
-    
+ 
 </div>

@@ -16,20 +16,20 @@ class SubjectSeeder extends Seeder
     {
         $subjects = [
             [
-                'name' => 'My life',
-                'slug' => 'my-life',
+                'name' => 'Programming',
+                'slug' => 'programming',
                 'created_at' => '2021-02-24 22:34:18',
                 'updated_at' => '2021-02-24 22:34:18',
             ],
             [
-                'name' => 'My wife',
-                'slug' => 'my-wife',
+                'name' => 'Ezoterics',
+                'slug' => 'ezoterics',
                 'created_at' => '2021-02-24 22:34:18',
                 'updated_at' => '2021-02-24 22:34:18',
             ],
             [
-                'name' => 'Envisage',
-                'slug' => 'envisage',
+                'name' => 'Economics',
+                'slug' => 'economics',
                 'created_at' => '2021-02-24 22:34:18',
                 'updated_at' => '2021-02-24 22:34:18',
             ],
