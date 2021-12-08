@@ -1,13 +1,23 @@
 <div class="filter-group">
-    @foreach (['free' => 'Free', 'premium' => 'Premium'] as $value => $name)
+    @if (count(array_intersect(array_keys(request()->query()), array_keys($mappings))))
     <p>
+        <a href="{{ route('books.index') }}">Clear all filters</a>
+    </p>
+    @endif
+    
+    @foreach ($mappings as $key => $map)
+    <div class="item">
+    @foreach($map as $value => $name)
+    <p class="{{ request($key) === $value ? ' active' : '' }}">
+        <!-- Merging current query with the key and value of the filter --> 
         <a
-            href="{{ route('books.index', array_merge(request()->query(), ['access' => $value])) }}" 
-            class="{{ request('access') === $value ? ' active' : '' }}">
+            href="{{ route('books.index', array_merge(request()->query(), [$key => $value])) }}">
             {{ $name }}
         </a>
     </p>
     @endforeach
-        <p><a href="#" class="list-group-item">PHP</a></p>
+    </div>
+    @endforeach
+        
     
 </div>

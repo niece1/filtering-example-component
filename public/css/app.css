@@ -32152,8 +32152,11 @@ select {
   font-size: 15px;
   background-color: #cccccc;
   padding: 2px 3px;
-  margin: 0 3px;
   margin: 10px 0;
+}
+
+.books .filters .filter-group .item {
+  margin: 35px 0;
 }
 
 .books .filters .filter-group p a {
@@ -32161,8 +32164,8 @@ select {
   color: #fff;
 }
 
-.books .filters .filter-group p a.active {
-  color: red;
+.books .filters .filter-group p.active {
+  background-color: red;
 }
 
 .books .books-list {

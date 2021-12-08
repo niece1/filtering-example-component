@@ -57,11 +57,11 @@ class Book extends Model
 
     public function getFormattedAccessAttribute()
     {
-        return $this->free === true ? 'Free' : 'Premium';
+        return $this->free == true ? 'Free' : 'Premium';
     }
 
     public function getFormattedStartedAttribute()
     {
-        return $this->started === true ? 'Started' : 'Not started';
+        return $this->started == true ? 'Started' : 'Not started';
     }
 }
