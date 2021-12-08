@@ -32137,6 +32137,74 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.books {
+  display: grid;
+  grid-template-columns: 20% 70%;
+  grid-gap: 50px;
+  justify-content: space-between;
+}
+
+.books .filters {
+  margin: 18px 0;
+}
+
+.books .filters .filter-group p {
+  font-size: 15px;
+  background-color: #cccccc;
+  padding: 2px 3px;
+  margin: 0 3px;
+  margin: 10px 0;
+}
+
+.books .filters .filter-group p a {
+  margin-left: 15px;
+  color: #fff;
+}
+
+.books .filters .filter-group p a.active {
+  color: red;
+}
+
+.books .books-list {
+  margin: 5px 0;
+}
+
+.books .books-list ul li  {
+  clear: left;
+  margin: 20px 0;
+}
+
+.books .books-list ul li a img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  width: 130px;
+  height: 65px;
+  float: left;
+  margin-right: 10px;
+}
+
+.books .books-list ul li .book-content h5 {
+  font-weight: normal;
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+
+.books .books-list ul li .book-content small {
+  color: red;
+  font-size: 12px;
+  margin: 0 3px;
+}
+
+.books .books-list ul li .book-content small.subject {
+  color: #fff;
+  font-size: 12px;
+  background-color: green;
+  padding: 2px 3px;
+  margin: 0 3px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

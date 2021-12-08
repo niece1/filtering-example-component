@@ -44,4 +44,24 @@ class Book extends Model
     {
         return $this->belongsToMany(User::class);
     }
+    
+    public function getFormattedDifficultyAttribute()
+    {
+        return ucfirst($this->difficulty);
+    }
+
+    public function getFormattedTypeAttribute()
+    {
+        return ucfirst($this->type);
+    }
+
+    public function getFormattedAccessAttribute()
+    {
+        return $this->free === true ? 'Free' : 'Premium';
+    }
+
+    public function getFormattedStartedAttribute()
+    {
+        return $this->started === true ? 'Started' : 'Not started';
+    }
 }

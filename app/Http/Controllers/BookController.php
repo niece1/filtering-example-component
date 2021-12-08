@@ -9,13 +9,8 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
-        return Book::with(['subjects'])->filter($request, $this->getFilters())->get();
-    }
-    
-    protected function getFilters()
-    {
-        return [
-            
-        ];
+        $books = Book::with(['subjects', 'users'])->filter($request)->get();
+        
+        return view('books.index', compact('books'));
     }
 }
