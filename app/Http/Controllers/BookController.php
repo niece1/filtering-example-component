@@ -9,7 +9,7 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
-        $books = Book::with(['subjects', 'users'])->filter($request)->get();
+        $books = Book::with(['subjects', 'users'])->filter($request)->paginate(2);
         
         return view('books.index', compact('books'));
     }

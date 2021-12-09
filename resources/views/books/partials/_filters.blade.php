@@ -11,11 +11,16 @@
         @foreach($map as $value => $name)
         <p class="{{ request($key) === $value ? ' active' : '' }}">
             <!-- Merging current query with the key and value of the filter --> 
-            <a href="{{ route('books.index', array_merge(request()->query(), [$key => $value])) }}">
+            <a href="{{ route('books.index', array_merge(request()->query(), [$key => $value, 'page' => 1])) }}">
                 {{ $name }}
             </a>
         </p>
         @endforeach
+        @if(request($key))
+        <p class="clear-filter">
+            <a href="{{ route('books.index', Arr::except(request()->query(), [$key, 'page'])) }}">&times; Clear this filter</a>
+        </p>
+        @endif
     </div>
     @endforeach
  

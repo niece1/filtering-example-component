@@ -38,9 +38,13 @@
                                         </div>
                                     </li>
                                 </ul>
+                                
                             @empty
                                 <h3>No books found.</h3>
                             @endforelse
+                            <div class="pagination-holder">
+                                {{ $books->appends(request()->query())->links() }}
+                            </div>
                         </div>
                     </div>
                 <!-- Book list -->
