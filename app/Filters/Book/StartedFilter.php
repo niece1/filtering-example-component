@@ -5,11 +5,6 @@ namespace App\Filters\Book;
 use App\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
-/**
- * Description of StartedFilter
- *
- * @author test
- */
 class StartedFilter extends Filter
 {
     /**
@@ -26,19 +21,18 @@ class StartedFilter extends Filter
     }
 
     /**
-     * Filter by course access type (free, premium).
+     * Filter book by started attribute.
      *
-     * @param  string $access
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @param mixed $value
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function filter(Builder $builder, $value)
     {
         $value = $this->resolveFilterValue($value);
-
         if ($value === null) {
             return $builder;
         }
-
         $method = $value ? 'whereHas' : 'whereDoesntHave';
 
         return $builder->{$method}('users', function ($builder) {

@@ -5,22 +5,39 @@ namespace App\Filters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
-/**
- * Description of Filters
- *
- * @author test
- */
 abstract class Filters
 {
+    /**
+     * The request instance.
+     *
+     * @var object
+     */
     protected $request;
 
+    /**
+     * An array of filters.
+     *
+     * @var array
+     */
     protected $filters = [];
 
+    /**
+     * Create a new filters instance.
+     *
+     * @param  Illuminate\Http\Request $request
+     * @return void
+     */
     public function __construct(Request $request)
     {
         $this->request = $request;
     }
 
+    /**
+     * Filter an entity.
+     *
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @return Illuminate\Database\Eloquent\Builder
+     */
     public function filter(Builder $builder)
     {
         foreach ($this->getFilters() as $filter => $value) {
@@ -32,7 +49,7 @@ abstract class Filters
     /**
      * Instantiate a filter.
      *
-     * @param  string $filter
+     * @param string $filter
      * @return mixed
      */
     protected function resolveFilter($filter)
@@ -44,6 +61,7 @@ abstract class Filters
      * Add filters.
      *
      * @param array $filters
+     * @return mixed
      */
     public function add(array $filters)
     {
@@ -65,7 +83,7 @@ abstract class Filters
     /**
      * Filter filters that are only in the request.
      *
-     * @param  array $filters
+     * @param array $filters
      * @return array
      */
     protected function filterFilters($filters)

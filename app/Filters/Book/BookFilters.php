@@ -15,13 +15,13 @@ use App\Filters\Book\{
     ViewsOrder
 };
 
-/**
- * Description of BookFilters
- *
- * @author test
- */
 class BookFilters extends Filters
 {
+    /**
+     * A list of filters.
+     *
+     * @var array
+     */
     protected $filters = [
         'access' => AccessFilter::class,
         'difficulty' => DifficultyFilter::class,
@@ -31,6 +31,11 @@ class BookFilters extends Filters
         'views' => ViewsOrder::class,
     ];
 
+    /**
+     * Mappings for database values.
+     *
+     * @return array
+     */
     public static function mappings()
     {
         $map = [

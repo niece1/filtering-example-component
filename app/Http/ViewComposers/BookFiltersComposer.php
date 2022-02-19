@@ -5,13 +5,14 @@ namespace App\Http\ViewComposers;
 use Illuminate\View\View;
 use App\Filters\Book\BookFilters;
 
-/**
- * Description of BookFiltersComposer
- *
- * @author test
- */
 class BookFiltersComposer
 {
+    /**
+     * Bind data to the view.
+     *
+     * @param \Illuminate\View\View $view
+     * @return void
+     */
     public function compose(View $view)
     {
         $view->with([

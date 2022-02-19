@@ -5,11 +5,6 @@ namespace App\Filters\Book;
 use App\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
-/**
- * Description of TypeFilter
- *
- * @author test
- */
 class TypeFilter extends Filter
 {
     /**
@@ -27,15 +22,15 @@ class TypeFilter extends Filter
     }
 
     /**
-     * Filter by book type.
+     * Filter book by type.
      *
-     * @param  string $type
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @param mixed $value
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function filter(Builder $builder, $value)
     {
         $value = $this->resolveFilterValue($value);
-
         if ($value === null) {
             return $builder;
         }

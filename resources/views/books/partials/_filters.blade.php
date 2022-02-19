@@ -7,7 +7,6 @@
     
     @foreach ($mappings as $key => $map)
     <div class="item">
-        
         @foreach($map as $value => $name)
         <p class="{{ request($key) === $value ? ' active' : '' }}">
             <!-- Merging current query with the key and value of the filter --> 
@@ -23,5 +22,4 @@
         @endif
     </div>
     @endforeach
- 
 </div>

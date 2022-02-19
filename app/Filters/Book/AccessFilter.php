@@ -5,11 +5,6 @@ namespace App\Filters\Book;
 use App\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
-/**
- * Description of AccessFilter
- *
- * @author test
- */
 class AccessFilter extends Filter
 {
     /**
@@ -28,13 +23,13 @@ class AccessFilter extends Filter
     /**
      * Filter by book access type (free, premium).
      *
-     * @param  string $access
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @param mixed $value
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function filter(Builder $builder, $value)
     {
         $value = $this->resolveFilterValue($value);
-
         if ($value === null) {
             return $builder;
         }

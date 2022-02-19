@@ -16,38 +16,38 @@
                         <div class="filters">
                             @include('books.partials._filters')
                         </div>
-                        
+                        <!-- Book list -->
                         <div class="books-list">
                             @forelse ($books as $book)
-                               <ul>
-                                    <li>
-                                        <a href="#">
-                                            <img src="http://via.placeholder.com/64x64&text=..." alt="{{ $book->name }}">
-                                        </a>
-                                        <div class="book-content">
-                                            <h5>{{ $book->name }}</h5>
-                                            @if ($book->subjects->count())
-                                                @foreach ($book->subjects as $subject)
-                                                    <small class="subject">{{ $subject->name }}</small>
-                                                @endforeach
-                                            @endif
-                                            <small>{{ $book->formattedDifficulty }}</small>
-                                            <small>{{ $book->formattedAccess }}</small>
-                                            <small>{{ $book->formattedType }}</small>
-                                            <small>{{ $book->formattedStarted }}</small>
-                                        </div>
-                                    </li>
-                                </ul>
-                                
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="http://via.placeholder.com/64x64&text=..." alt="{{ $book->name }}">
+                                    </a>
+                                    <div class="book-content">
+                                        <h5>{{ $book->name }}</h5>
+                                        @if ($book->subjects->count())
+                                        @foreach ($book->subjects as $subject)
+                                        <small class="subject">{{ $subject->name }}</small>
+                                        @endforeach
+                                        @endif
+                                        <small>{{ $book->formattedDifficulty }}</small>
+                                        <small>{{ $book->formattedAccess }}</small>
+                                        <small>{{ $book->formattedType }}</small>
+                                        <small>{{ $book->formattedStarted }}</small>
+                                    </div>
+                                </li>
+                            </ul>
                             @empty
-                                <h3>No books found.</h3>
+                            <h3>No books found.</h3>
                             @endforelse
                             <div class="pagination-holder">
                                 {{ $books->appends(request()->query())->links() }}
                             </div>
                         </div>
+                        <!-- /.Book list -->
                     </div>
-                <!-- Book list -->
+                    <!-- /.Books -->
                 </div>
             </div>
         </div>
@@ -56,4 +56,3 @@
 
 </x-app-layout>
 <!-- /.Layout -->
-

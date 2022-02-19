@@ -5,11 +5,6 @@ namespace App\Filters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 
-/**
- * Description of Filter
- *
- * @author test
- */
 abstract class Filter
 {
     /**
@@ -25,17 +20,15 @@ abstract class Filter
     /**
      * Apply filter.
      *
-     * @param  Builder $builder
-     * @param  mixed  $value
-     *
-     * @return Builder
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @param mixed $value
      */
     abstract public function filter(Builder $builder, $value);
 
     /**
      * Resolve the value used for filtering.
      *
-     * @param  mixed $key
+     * @param mixed $key
      * @return mixed
      */
     protected function resolveFilterValue($key)
@@ -46,7 +39,7 @@ abstract class Filter
     /**
      * Resolve the order direction to be used.
      *
-     * @param  string $direction
+     * @param string $direction
      * @return string
      */
     protected function resolveOrderDirection($direction)

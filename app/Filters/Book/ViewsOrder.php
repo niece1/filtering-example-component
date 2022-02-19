@@ -5,16 +5,13 @@ namespace App\Filters\Book;
 use App\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
-/**
- * Description of ViewsOrder
- *
- * @author test
- */
 class ViewsOrder extends Filter
 {
     /**
-     * Order by views in descending
+     * Filter by views in descending order.
      *
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @param string $direction
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function filter(Builder $builder, $direction)

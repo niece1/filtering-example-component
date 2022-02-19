@@ -45,6 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Get books associated with specified user.
+     */
     public function books()
     {
         return $this->belongsToMany(Book::class);

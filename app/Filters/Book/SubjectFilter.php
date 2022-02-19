@@ -5,17 +5,13 @@ namespace App\Filters\Book;
 use App\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
-/**
- * Description of SubjectFilter
- *
- * @author test
- */
 class SubjectFilter extends Filter
 {
     /**
-     * Filter by subject.
+     * Filter book by subject.
      *
-     * @param  string $subject
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @param mixed $value
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function filter(Builder $builder, $value)

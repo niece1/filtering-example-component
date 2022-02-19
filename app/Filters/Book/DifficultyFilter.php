@@ -5,11 +5,6 @@ namespace App\Filters\Book;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filters\Filter;
 
-/**
- * Description of DifficultyFilter
- *
- * @author test
- */
 class DifficultyFilter extends Filter
 {
     /**
@@ -27,15 +22,15 @@ class DifficultyFilter extends Filter
     }
 
     /**
-     * Filter by course difficulty.
+     * Filter by book difficulty.
      *
-     * @param  string $access
+     * @param Illuminate\Database\Eloquent\Builder $builder
+     * @param mixed $value
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function filter(Builder $builder, $value)
     {
         $value = $this->resolveFilterValue($value);
-
         if ($value === null) {
             return $builder;
         }
