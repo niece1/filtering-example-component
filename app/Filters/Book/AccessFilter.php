@@ -24,7 +24,7 @@ class AccessFilter extends Filter
             'premium' => false,
         ];
     }
-    
+
     /**
      * Filter by book access type (free, premium).
      *

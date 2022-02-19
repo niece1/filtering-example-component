@@ -25,7 +25,7 @@ class DifficultyFilter extends Filter
             'advanced' => 'advanced',
         ];
     }
-    
+
     /**
      * Filter by course difficulty.
      *

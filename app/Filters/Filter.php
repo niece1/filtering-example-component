@@ -21,7 +21,7 @@ abstract class Filter
     {
         return [];
     }
-    
+
     /**
      * Apply filter.
      *
@@ -30,8 +30,8 @@ abstract class Filter
      *
      * @return Builder
      */
-    public abstract function filter(Builder $builder, $value);
-    
+    abstract public function filter(Builder $builder, $value);
+
     /**
      * Resolve the value used for filtering.
      *
@@ -42,7 +42,7 @@ abstract class Filter
     {
         return Arr::get($this->mappings(), $key);
     }
-    
+
     /**
      * Resolve the order direction to be used.
      *

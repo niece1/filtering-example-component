@@ -13,14 +13,14 @@ use Illuminate\Http\Request;
 abstract class Filters
 {
     protected $request;
-    
+
     protected $filters = [];
-    
+
     public function __construct(Request $request)
     {
         $this->request = $request;
     }
-    
+
     public function filter(Builder $builder)
     {
         foreach ($this->getFilters() as $filter => $value) {
@@ -28,7 +28,7 @@ abstract class Filters
         }
         return $builder;
     }
-    
+
     /**
      * Instantiate a filter.
      *
@@ -37,9 +37,9 @@ abstract class Filters
      */
     protected function resolveFilter($filter)
     {
-        return new $this->filters[$filter];
+        return new $this->filters[$filter]();
     }
-    
+
     /**
      * Add filters.
      *
@@ -51,7 +51,7 @@ abstract class Filters
 
         return $this;
     }
-    
+
     /**
      * Get filters to be used.
      *
@@ -61,7 +61,7 @@ abstract class Filters
     {
         return $this->filterFilters($this->filters);
     }
-    
+
     /**
      * Filter filters that are only in the request.
      *

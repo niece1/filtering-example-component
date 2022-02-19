@@ -21,9 +21,8 @@ use App\Filters\Book\{
  * @author test
  */
 class BookFilters extends Filters
-
 {
-    protected $filters =[
+    protected $filters = [
         'access' => AccessFilter::class,
         'difficulty' => DifficultyFilter::class,
         'type' => TypeFilter::class,
@@ -31,7 +30,7 @@ class BookFilters extends Filters
         'started' => StartedFilter::class,
         'views' => ViewsOrder::class,
     ];
-    
+
     public static function mappings()
     {
         $map = [
